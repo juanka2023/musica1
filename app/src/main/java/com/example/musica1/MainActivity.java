@@ -76,6 +76,40 @@ public class MainActivity extends AppCompatActivity {
             repetir = 1;
         }
     }
+    // Método para saltar la siguiente canción
+    public void Siguiente(View view){
+        if(posicion < vectormp.length -1){
+
+            if(vectormp[posicion].isPlaying()){
+                vectormp[posicion].stop();
+                posicion++;
+                vectormp[posicion].start();
+
+                if(posicion == 0){
+                    iv.setImageResource(R.drawable.portada1);
+                }else if(posicion == 1){
+                    iv.setImageResource(R.drawable.portada2);
+                }else if(posicion == 2){
+                    iv.setImageResource(R.drawable.portada3);
+                }
+            }else{
+                posicion++;
+
+                if(posicion == 0){
+                    iv.setImageResource(R.drawable.portada1);
+                }else if(posicion == 1){
+                    iv.setImageResource(R.drawable.portada2);
+                }else if(posicion == 2){
+                    iv.setImageResource(R.drawable.portada3);
+                }
+
+
+
+            }
+        }else{
+            Toast.makeText(this, "No hay canciones", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
 
 
