@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/anterior"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_name"
+            android:onClick="Anterior" />
 
         <Button
             android:id="@+id/botonsiguiente"
@@ -67,6 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/siguiente"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_name"
+            android:onClick="Siguiente" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

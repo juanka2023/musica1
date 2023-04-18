@@ -110,6 +110,44 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No hay canciones", Toast.LENGTH_SHORT).show();
         }
     }
+    // Método para regresar de canción
+    public void Anterior(View view){
+        if(posicion >= 1){
+
+            if(vectormp[posicion].isPlaying()){
+                vectormp[posicion].stop();
+                vectormp[0] = MediaPlayer.create(this, R.raw.race);
+                vectormp[1] = MediaPlayer.create(this, R.raw.sound);
+                vectormp[2] = MediaPlayer.create(this, R.raw.tea);
+                posicion--;
+
+                if(posicion == 0){
+                    iv.setImageResource(R.drawable.portada1);
+                }else if(posicion == 1){
+                    iv.setImageResource(R.drawable.portada2);
+                }else if(posicion == 2){
+                    iv.setImageResource(R.drawable.portada3);
+                }
+
+                vectormp[posicion].start();
+
+
+            }else{
+
+                posicion--;
+                if(posicion == 0){
+                    iv.setImageResource(R.drawable.portada1);
+                }else if(posicion == 1){
+                    iv.setImageResource(R.drawable.portada2);
+                }else if(posicion == 2){
+                    iv.setImageResource(R.drawable.portada3);
+                }
+            }
+
+        }else{
+            Toast.makeText(this, "No hay canciones", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
 
 
